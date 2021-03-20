@@ -34,16 +34,20 @@ func _physics_process(delta):
 		if Input.is_action_pressed("A") and vec.x > -WALK_SPEED:
 			vec.x -= acc
 			ip.flip_h = true
+			ip.animation("run")
 		if Input.is_action_pressed("D") and vec.x < WALK_SPEED:
 			vec.x += acc
 			ip.flip_h = false
+			ip.animation("run")
 	else:
 		if Input.is_action_pressed("A") and vec.x > -RUN_SPEED:
 			vec.x -= acc
 			ip.flip_h = true
+			ip.animation("run")
 		if Input.is_action_pressed("D") and vec.x < RUN_SPEED:
 			vec.x += acc
 			ip.flip_h = false
+			ip.animation("run")
 	
 	
 	
@@ -55,7 +59,7 @@ func _physics_process(delta):
 	elif vec.x < 0:
 		vec.x += stop
 	
-	if Input.is_action_pressed("space") and vec.y > 1:
+	if Input.is_action_pressed("space") and is_on_floor():
 		vec.y = jump
 
 	move_and_slide(vec, Vector2(0, -1))

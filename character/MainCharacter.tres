@@ -1,12 +1,39 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=2]
+[gd_resource type="SpriteFrames" load_steps=15 format=2]
 
 [ext_resource path="res://character/Individual Sprites/adventurer-idle-01.png" type="Texture" id=1]
 [ext_resource path="res://character/Individual Sprites/adventurer-idle-00.png" type="Texture" id=2]
+[ext_resource path="res://character/Individual Sprites/walk/adventurer-run-05.png" type="Texture" id=3]
+[ext_resource path="res://character/Individual Sprites/jump/adventurer-jump-01.png" type="Texture" id=4]
+[ext_resource path="res://character/Individual Sprites/jump/adventurer-jump-02.png" type="Texture" id=5]
+[ext_resource path="res://character/Individual Sprites/fall/adventurer-fall-00.png" type="Texture" id=6]
+[ext_resource path="res://character/Individual Sprites/fall/adventurer-fall-01.png" type="Texture" id=7]
+[ext_resource path="res://character/Individual Sprites/jump/adventurer-jump-03.png" type="Texture" id=8]
+[ext_resource path="res://character/Individual Sprites/walk/adventurer-run-01.png" type="Texture" id=9]
+[ext_resource path="res://character/Individual Sprites/walk/adventurer-run-02.png" type="Texture" id=10]
+[ext_resource path="res://character/Individual Sprites/jump/adventurer-jump-00.png" type="Texture" id=11]
+[ext_resource path="res://character/Individual Sprites/walk/adventurer-run-00.png" type="Texture" id=12]
+[ext_resource path="res://character/Individual Sprites/walk/adventurer-run-03.png" type="Texture" id=13]
+[ext_resource path="res://character/Individual Sprites/walk/adventurer-run-04.png" type="Texture" id=14]
 
 [resource]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "default",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
 } ]
