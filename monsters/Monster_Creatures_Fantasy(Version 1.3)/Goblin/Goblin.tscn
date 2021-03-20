@@ -11,7 +11,7 @@ height = 1.84156
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.111362, -0.222725 )
 frames = ExtResource( 1 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
