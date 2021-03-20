@@ -4,8 +4,9 @@
 [ext_resource path="res://character/MainCharacter.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://MainCharacter.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 15.5745
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.4687
+height = 12.5581
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,15 +20,17 @@ tile_data = PoolIntArray( -10, 0, 262152, -9, 0, 262152, -8, 0, 262152, -7, 0, 2
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="player" type="KinematicBody2D" parent="."]
 position = Vector2( 0, -24.45 )
 script = ExtResource( 3 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="player"]
+position = Vector2( 0.0441933, 0.0441933 )
 frames = ExtResource( 2 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 0.323952, 3.49878 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2( 0.0587886, 3.71975 )
 shape = SubResource( 1 )
