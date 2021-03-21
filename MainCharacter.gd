@@ -35,7 +35,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("Use"):
 		for i in range(len(objects_in_range)):
-			if(objects_in_range[i].get_name() == "Mushroom"):
+			if(objects_in_range[i].has_method("UseMe")):
 				objects_in_range[i].UseMe(self)
 				break
 				
