@@ -12,3 +12,10 @@ func _ready():
 	pass # Replace with function body.
 
 
+func fill_room(tilemap):
+	for x in range(x0, x1):
+		tilemap.set_cell(x, y0, 0)
+		tilemap.set_cell(x, y1, 0)
+	for y in range(y0, y1):
+		tilemap.set_cell(x0, y, 0)
+		tilemap.set_cell(x1, y, 0)
