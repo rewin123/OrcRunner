@@ -12,8 +12,12 @@ func _ready():
 
 
 func _process(delta):
-	
 	pass
+	
+
+func UseMe(player):
+	player.hunger += 10
+	queue_free()
 
 
 func _on_Mushroom_area_entered(area):
