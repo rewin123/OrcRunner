@@ -135,10 +135,10 @@ position = Vector2( 0.105, 3.72 )
 shape = SubResource( 3 )
 
 [node name="hunger" type="ProgressBar" parent="player"]
-margin_left = -248.351
-margin_top = 148.565
-margin_right = -69.3513
-margin_bottom = 162.565
+margin_left = -245.0
+margin_top = 149.0
+margin_right = -70.0
+margin_bottom = 163.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -17,10 +17,10 @@ func _process(delta):
 
 
 func _on_Mushroom_area_entered(area):
-	$Sprite2.Visible = true
+	$Sprite2.visible = true
 	pass
 
 
 func _on_Mushroom_area_exited(area):
-	$Sprite2.Visible = false
+	$Sprite2.visible = false
 	pass
