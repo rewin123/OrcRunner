@@ -16,13 +16,14 @@ const RUN_SPEED = 200
 const jump = -200
 const stop = 10
 const acc = 50
+const maxhanger = 100
 
 onready var ip = get_node("AnimatedSprite")
-var anim = "stay"
 
 var vec = Vector2()
 var walk = 0
 var sword = "shte"
+var hunger = 100
 
 func _physics_process(delta):
 	vec.y += delta * GRAVITY
@@ -77,7 +78,8 @@ func _physics_process(delta):
 		sword = "shte"
 		$AnimatedSprite.play("sword_shte")
 	
-	
+	hunger -= delta*0.1
+	$hunger.value = hunger
 		
 	move_and_slide(vec, Vector2(0, -1))
 
