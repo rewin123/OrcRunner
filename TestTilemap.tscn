@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://CaveOppTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://character/Individual Sprites/fight/die/adventurer-die-04.png" type="Texture" id=2]
@@ -38,6 +38,11 @@
 [ext_resource path="res://character/Individual Sprites/fight/attack/1/adventurer-attack1-04.png" type="Texture" id=36]
 [ext_resource path="res://character/Individual Sprites/fight/sword-drw/adventurer-swrd-drw-02.png" type="Texture" id=37]
 [ext_resource path="res://character/Individual Sprites/move/stay/adventurer-idle-03.png" type="Texture" id=38]
+[ext_resource path="res://props/mushroom/mushroom.tscn" type="PackedScene" id=39]
+[ext_resource path="res://character/Individual Sprites/move/jump/adventurer-jump-02.png" type="Texture" id=40]
+[ext_resource path="res://character/Individual Sprites/move/jump/adventurer-jump-01.png" type="Texture" id=41]
+[ext_resource path="res://character/Individual Sprites/move/jump/adventurer-jump-03.png" type="Texture" id=42]
+[ext_resource path="res://character/Individual Sprites/move/jump/adventurer-jump-00.png" type="Texture" id=43]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.4687
@@ -54,6 +59,11 @@ animations = [ {
 "loop": false,
 "name": "sword_drw",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 42 ) ],
+"loop": false,
+"name": "jump",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
@@ -86,6 +96,10 @@ animations = [ {
 "speed": 6.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 8.48971
+height = 12.4547
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -95,17 +109,39 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -10, 0, 262152, -9, 0, 262152, -8, 0, 262152, -7, 0, 262152, -6, 0, 262152, -5, 0, 262152, -4, 0, 262152, -3, 0, 262152, -2, 0, 262152, -1, 0, 262152, -65536, 0, 262152, -65535, 0, 262152, -65534, 0, 262152, -65533, 0, 262152, -65532, 0, 262152, -65531, 0, 262152, -65530, 0, 262152, -65529, 0, 262152, -65528, 0, 262152, -65527, 0, 262152, 65521, 0, 524291, 65522, 0, 524291, 65523, 0, 524291, 65524, 0, 524291, 65525, 0, 524291, 65526, 0, 524291, 65527, 0, 524291, 65528, 0, 524291, 65529, 0, 524291, 65530, 0, 524291, 65531, 0, 524291, 65532, 0, 524291, 65533, 0, 524291, 65534, 0, 524291, 65535, 0, 524291, 0, 0, 524291, 1, 0, 524291, 2, 0, 524291, 3, 0, 524291, 4, 0, 524291, 5, 0, 524291, 6, 0, 524291, 7, 0, 524291, 8, 0, 524291, 9, 0, 524291, 10, 0, 524291, 11, 0, 524291, 12, 0, 524291, 13, 0, 524291, 14, 0, 524291, 15, 0, 524291, 16, 0, 524291, 17, 0, 262152, 65539, 0, 262152, 65540, 0, 262152, 65541, 0, 262152, 65542, 0, 262152, 65543, 0, 262152, 65544, 0, 262152, 65545, 0, 262152, 131073, 0, 262152, 131074, 0, 262152, 131075, 0, 262152, 131076, 0, 262152, 131077, 0, 262152, 131078, 0, 262152, 131079, 0, 262152, 131080, 0, 262152, 131081, 0, 262152, 196610, 0, 4, 196614, 0, 262152, 196615, 0, 262152 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
 [node name="player" type="KinematicBody2D" parent="."]
 position = Vector2( 0, -24.45 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2( 0.0587886, 3.71975 )
+position = Vector2( 0, 3.72 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="player"]
 frames = SubResource( 2 )
-animation = "die"
+animation = "jump"
+frame = 3
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2( 0, 24.45 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Area2D" type="Area2D" parent="player"]
+
+[node name="areaCollisionShape2D" type="CollisionShape2D" parent="player/Area2D"]
+position = Vector2( 0.105, 3.72 )
+shape = SubResource( 3 )
+
+[node name="hunger" type="ProgressBar" parent="player"]
+margin_left = -248.351
+margin_top = 148.565
+margin_right = -69.3513
+margin_bottom = 162.565
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mushroom" parent="." instance=ExtResource( 39 )]
+position = Vector2( 91.9084, -5.28988 )
