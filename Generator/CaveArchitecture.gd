@@ -10,6 +10,7 @@ var levels_y = []
 
 onready var tilemap = get_node("TileMap")
 onready var room_inst = preload("res://Generator/Room.gd")
+onready var cave_inst = preload("res://Generator/CaveRoom.gd")
 
 
 var blocks_in_meter = 4
@@ -37,6 +38,7 @@ func generate_levels():
 		print('Level ', levels_y[i][0], ' ', levels_y[i][1])
 		
 func generate_rooms():
+	var sd = randi()
 	for y in range(level_count):
 		var proportions = []
 		var sum = 0
@@ -47,14 +49,14 @@ func generate_rooms():
 		var x0 = 0
 		for x in range(room_count):
 			proportions[x] /= sum
-			var room = room_inst.new()
+			var room = cave_inst.new()
 			room.y0 = levels_y[y][0]
 			room.y1 = levels_y[y][1]
 			room.x0 = x0
 			var x1 = int(x0 + proportions[x] * world_width)
 			room.x1 = x1
 			x0 = x1
-			room.fill_room(tilemap)
+			room.fill_room(tilemap, sd)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

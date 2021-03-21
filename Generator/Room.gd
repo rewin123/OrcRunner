@@ -12,7 +12,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func fill_room(tilemap):
+func fill_room(tilemap, random_seed):
 	for x in range(x0, x1):
 		tilemap.set_cell(x, y0, 0)
 		tilemap.set_cell(x, y1, 0)
