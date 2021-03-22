@@ -145,3 +145,8 @@ __meta__ = {
 
 [node name="Mushroom" parent="." instance=ExtResource( 39 )]
 position = Vector2( 91.9084, -5.28988 )
+
+[node name="Mushroom2" parent="." instance=ExtResource( 39 )]
+position = Vector2( -76.7295, -5.1573 )
+[connection signal="area_entered" from="player/Area2D" to="player" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="player/Area2D" to="player" method="_on_Area2D_area_exited"]
