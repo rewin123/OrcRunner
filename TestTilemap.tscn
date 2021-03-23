@@ -42,3 +42,6 @@ position = Vector2( -79.0898, -2.67195 )
 
 [node name="Jug2" parent="." instance=ExtResource( 3 )]
 position = Vector2( -62.6082, -2.67195 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
