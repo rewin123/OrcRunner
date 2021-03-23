@@ -17,3 +17,21 @@ tile_data = PoolIntArray( -10, 0, 262152, -9, 0, 262152, -8, 0, 262152, -7, 0, 2
 
 [node name="Mushroom" parent="." instance=ExtResource( 39 )]
 position = Vector2( 91.9084, -5.28988 )
+
+[node name="Mushroom2" parent="." instance=ExtResource( 39 )]
+position = Vector2( -114.78, -4.39898 )
+
+[node name="Mushroom3" parent="." instance=ExtResource( 39 )]
+position = Vector2( -162.444, -3.50808 )
+
+[node name="Mushroom4" parent="." instance=ExtResource( 39 )]
+position = Vector2( -195.407, -3.50808 )
+
+[node name="Mushroom5" parent="." instance=ExtResource( 39 )]
+position = Vector2( -235.052, -2.17173 )
+
+[node name="Mushroom6" parent="." instance=ExtResource( 39 )]
+position = Vector2( -138.389, -4.84443 )
+
+[node name="Mushroom7" parent="." instance=ExtResource( 39 )]
+position = Vector2( 62.0633, -5.28988 )

@@ -16,7 +16,7 @@ func _process(delta):
 	
 
 func UseMe(player):
-	player.hunger += 10
+	player.ChangeHunger(10)
 	queue_free()
 
 

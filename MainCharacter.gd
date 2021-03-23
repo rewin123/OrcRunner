@@ -7,8 +7,6 @@ extends KinematicBody2D
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 const GRAVITY = 400.0
 const WALK_SPEED = 100
@@ -23,12 +21,24 @@ onready var ip = get_node("AnimatedSprite")
 var vec = Vector2()
 var walk = 0
 var sword = "shte"
-var hunger = 100
 
-var full_hunger_time = 300.0 
+var full_hunger_time = 10.0 * 60.0
 var hunger_decreasing = 100.0 / full_hunger_time
 
+var full_heal_time = 10.0 * 60.0
+var healing_speed = 100.0 / full_heal_time
+
 var objects_in_range = []
+
+func _ready():
+	$hunger.value = 100.0
+	$health.value = 50.0
+	$water.value = 50.0
+	$stamina.value = 100.0
+	
+func hunger_heal(delta):
+	if $hunger.value > 50:
+		$health.value += delta * ($hunger.value - 50.0) / 50.0 * healing_speed
 
 func _physics_process(delta):
 	vec.y += delta * GRAVITY
@@ -89,11 +99,13 @@ func _physics_process(delta):
 		sword = "shte"
 		$AnimatedSprite.play("sword_shte")
 	
-	hunger -= delta*hunger_decreasing
-	$hunger.value = hunger
+	hunger_heal(delta)
+	$hunger.value -= delta*hunger_decreasing
 		
 	move_and_slide(vec, Vector2(0, -1))
 
+func ChangeHunger(d_hunger):
+	$hunger.value += d_hunger
 
 func _on_Area2D_area_entered(area):
 	objects_in_range.append(area)
