@@ -23,10 +23,12 @@ var walk = 0
 var sword = "shte"
 
 var full_hunger_time = 10.0 * 60.0
-var hunger_decreasing = 100.0 / full_hunger_time
-
 var full_heal_time = 10.0 * 60.0
+var full_water_time = 20.0 * 60.0
+
+var hunger_decreasing = 100.0 / full_hunger_time
 var healing_speed = 100.0 / full_heal_time
+var water_decreasing = 100.0 / full_water_time
 
 var objects_in_range = []
 
@@ -101,11 +103,15 @@ func _physics_process(delta):
 	
 	hunger_heal(delta)
 	$hunger.value -= delta*hunger_decreasing
+	$water.value -= delta*water_decreasing
 		
 	move_and_slide(vec, Vector2(0, -1))
 
 func ChangeHunger(d_hunger):
 	$hunger.value += d_hunger
+	
+func ChangeWater(d_water):
+	$water.value += d_water
 
 func _on_Area2D_area_entered(area):
 	objects_in_range.append(area)

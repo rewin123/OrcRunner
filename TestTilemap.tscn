@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://CaveOppTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://props/jug/jug.tscn" type="PackedScene" id=3]
 [ext_resource path="res://props/mushroom/mushroom.tscn" type="PackedScene" id=39]
 
 [node name="Node2D" type="Node2D"]
@@ -35,3 +36,9 @@ position = Vector2( -138.389, -4.84443 )
 
 [node name="Mushroom7" parent="." instance=ExtResource( 39 )]
 position = Vector2( 62.0633, -5.28988 )
+
+[node name="Jug" parent="." instance=ExtResource( 3 )]
+position = Vector2( -79.0898, -2.67195 )
+
+[node name="Jug2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -62.6082, -2.67195 )
