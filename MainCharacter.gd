@@ -16,6 +16,8 @@ const stop = 10
 const acc = 50
 const maxhanger = 100
 
+const air_v = 0.1
+
 onready var ip = get_node("AnimatedSprite")
 
 var vec = Vector2()
@@ -44,6 +46,8 @@ func hunger_heal(delta):
 
 func _physics_process(delta):
 	vec.y += delta * GRAVITY
+	if is_on_floor():
+		vec.y = 0
 	
 	if Input.is_action_pressed("Use"):
 		for i in range(len(objects_in_range)):
