@@ -2,7 +2,7 @@
 
 [ext_resource path="res://props/jug/jug.png" type="Texture" id=1]
 [ext_resource path="res://props/jug/jug.gd" type="Script" id=2]
-[ext_resource path="res://props/jug/E.png" type="Texture" id=3]
+[ext_resource path="res://props/E_key.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.35716
@@ -19,10 +19,8 @@ texture = ExtResource( 1 )
 position = Vector2( -0.0883884, 0.825625 )
 shape = SubResource( 1 )
 
-[node name="E_key" type="Sprite" parent="."]
-visible = false
-position = Vector2( -0.358801, -15.715 )
-scale = Vector2( 0.050057, 0.0537398 )
-texture = ExtResource( 3 )
+[node name="Sprite2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -0.555239, -34.2954 )
+scale = Vector2( 0.0394848, 0.0405457 )
 [connection signal="area_entered" from="." to="." method="_on_Jug_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Jug_area_exited"]

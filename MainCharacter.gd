@@ -8,7 +8,7 @@ extends KinematicBody2D
 
 # Called when the node enters the scene tree for the first time.
 
-const GRAVITY = 400.0
+const GRAVITY = Constants.GRAVITY
 const WALK_SPEED = 100
 const RUN_SPEED = 200
 const jump = -200

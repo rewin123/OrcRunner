@@ -48,19 +48,24 @@ height = 12.5581
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 35 ), ExtResource( 29 ), ExtResource( 16 ), ExtResource( 10 ) ],
 "loop": false,
-"name": "jump",
-"speed": 15.0
+"name": "sword_drw",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "sword_shte",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "stay_sword",
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 39 ), ExtResource( 37 ), ExtResource( 15 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "stay",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 27 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "run",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 32 ), ExtResource( 3 ), ExtResource( 28 ), ExtResource( 14 ), ExtResource( 22 ) ],
@@ -78,20 +83,15 @@ animations = [ {
 "name": "die",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 35 ), ExtResource( 29 ), ExtResource( 16 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "sword_drw",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 31 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 23 ) ],
-"loop": false,
-"name": "sword_shte",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 34 ) ],
+"frames": [ ExtResource( 20 ), ExtResource( 27 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 41 ) ],
 "loop": true,
-"name": "stay_sword",
+"name": "run",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "jump",
+"speed": 15.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
@@ -117,9 +117,9 @@ position = Vector2( 0, 24.45 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="PlayerArea" type="Area2D" parent="."]
 
-[node name="areaCollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="areaCollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 position = Vector2( 0.105, 3.72 )
 shape = SubResource( 3 )
 
@@ -174,5 +174,5 @@ value = 50.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="PlayerArea" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="PlayerArea" to="." method="_on_Area2D_area_exited"]

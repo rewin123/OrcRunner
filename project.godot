@@ -19,6 +19,10 @@ config/name="OrcRunner"
 run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Constants="*res://Constants.gd"
+
 [input]
 
 space={
@@ -74,5 +78,4 @@ Use={
 
 [rendering]
 
-environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

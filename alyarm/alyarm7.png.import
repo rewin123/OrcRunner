@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/E.png-cdd2ac59a0dfccdbd07cb22f7254a5e4.stex"
+path="res://.import/alyarm7.png-30461613eaa789570157638dfb9052ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://props/jug/E.png"
-dest_files=[ "res://.import/E.png-cdd2ac59a0dfccdbd07cb22f7254a5e4.stex" ]
+source_file="res://alyarm/alyarm7.png"
+dest_files=[ "res://.import/alyarm7.png-30461613eaa789570157638dfb9052ea.stex" ]
 
 [params]
 
