@@ -27,13 +27,15 @@ func UseMe(player):
 	queue_free()
 
 func _on_Jug_area_entered(area):
-	e_key = e_key_inst.instance()
-	add_child(e_key)
-	e_key.position = epos
-	e_key.scale = escale
+	if area.get_parent().name == "player":
+		e_key = e_key_inst.instance()
+		add_child(e_key)
+		e_key.position = epos
+		e_key.scale = escale
 
 
 func _on_Jug_area_exited(area):
-	if e_key != null:
-		e_key.queue_free()
-		e_key = null
+	if area.get_parent().name == "player":
+		if e_key != null:
+			e_key.queue_free()
+			e_key = null

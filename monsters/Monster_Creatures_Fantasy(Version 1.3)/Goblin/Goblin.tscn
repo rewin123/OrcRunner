@@ -8,8 +8,8 @@
 radius = 9.19746
 height = 8.04399
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 103.128, 21.1222 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 143.579
 
 [node name="Goblin" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -25,15 +25,17 @@ frames = ExtResource( 1 )
 frame = 1
 playing = true
 
-[node name="VisionArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
-position = Vector2( -0.198425, 3.37322 )
-shape = SubResource( 2 )
-
 [node name="Question" parent="." instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 0.352747, -15.597 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="VisionArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
+shape = SubResource( 2 )
+[connection signal="animation_finished" from="Question" to="." method="_on_Question_animation_finished"]
 [connection signal="area_entered" from="VisionArea" to="." method="_on_VisionArea_area_entered"]
 [connection signal="area_exited" from="VisionArea" to="." method="_on_VisionArea_area_exited"]
-[connection signal="animation_finished" from="Question" to="." method="_on_Question_animation_finished"]

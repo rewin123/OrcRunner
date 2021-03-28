@@ -36,30 +36,10 @@
 
 [resource]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 10 ), ExtResource( 20 ), ExtResource( 28 ) ],
-"loop": true,
-"name": "stay",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "sword_drw",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 7 ) ],
 "loop": false,
 "name": "jump",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "fall",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 31 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 33 ) ],
-"loop": false,
-"name": "attack1",
-"speed": 15.0
+"speed": 40.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 2 ) ],
 "loop": true,
@@ -71,8 +51,28 @@ animations = [ {
 "name": "sword_shte",
 "speed": 6.0
 }, {
+"frames": [ ExtResource( 31 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": false,
+"name": "attack1",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "fall",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 10 ), ExtResource( 20 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "stay",
+"speed": 3.0
+}, {
 "frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 21 ), null ],
 "loop": true,
 "name": "stay_sword",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "sword_drw",
+"speed": 6.0
 } ]

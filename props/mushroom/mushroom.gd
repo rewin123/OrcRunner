@@ -28,15 +28,17 @@ func UseMe(player):
 
 
 func _on_Mushroom_area_entered(area):
-	e_key = e_key_inst.instance()
-	add_child(e_key)
-	e_key.position = epos
-	e_key.scale = escale
-	pass
+	if area.get_parent().name == "player":
+		e_key = e_key_inst.instance()
+		add_child(e_key)
+		e_key.position = epos
+		e_key.scale = escale
+		pass
 
 
 func _on_Mushroom_area_exited(area):
-	if e_key != null:
-		e_key.queue_free()
-		e_key = null
-	pass
+	if area.get_parent().name == "player":
+		if e_key != null:
+			e_key.queue_free()
+			e_key = null
+		pass

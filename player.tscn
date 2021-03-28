@@ -48,9 +48,14 @@ height = 12.5581
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 35 ), ExtResource( 29 ), ExtResource( 16 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 21 ) ],
 "loop": false,
-"name": "sword_drw",
+"name": "jump",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 27 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "run",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 31 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 23 ) ],
@@ -58,15 +63,10 @@ animations = [ {
 "name": "sword_shte",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 34 ) ],
+"frames": [ ExtResource( 33 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 25 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "stay_sword",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 39 ), ExtResource( 37 ), ExtResource( 15 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "stay",
-"speed": 6.0
+"name": "die",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 32 ), ExtResource( 3 ), ExtResource( 28 ), ExtResource( 14 ), ExtResource( 22 ) ],
 "loop": false,
@@ -78,20 +78,20 @@ animations = [ {
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 33 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 25 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 39 ), ExtResource( 37 ), ExtResource( 15 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "die",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 27 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "run",
+"name": "stay",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "stay_sword",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 29 ), ExtResource( 16 ), ExtResource( 10 ) ],
 "loop": false,
-"name": "jump",
-"speed": 15.0
+"name": "sword_drw",
+"speed": 6.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
@@ -174,5 +174,7 @@ value = 50.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="PlayerArea" to="." method="_on_Area2D_area_exited"]

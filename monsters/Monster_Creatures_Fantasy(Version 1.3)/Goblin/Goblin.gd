@@ -9,7 +9,7 @@ var vel = Vector2(0, 0)
 
 const GRAVITY = Constants.GRAVITY
 
-var enemy_target = null
+onready var enemy_target = find_node("player", true, false)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +17,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	
 	vel.y += GRAVITY * delta
 	if is_on_floor():
 		vel.y = 0
@@ -24,6 +25,7 @@ func _physics_process(delta):
 	var target_x = 0
 	if enemy_target != null:
 		target_x = sign(enemy_target.position.x - position.x) * 50.0
+		$RayCast2D.cast_to = enemy_target.position - position
 	else:
 		target_x = 0
 		
@@ -43,15 +45,13 @@ func _on_Question_animation_finished():
 	pass # Replace with function body.
 
 
+
+
 func _on_VisionArea_area_entered(area):
-	if area.name == "PlayerArea":
-		$Question.visible = true
-		$Question.playing = true
-		enemy_target = area.get_owner()
-	pass # Replace with function body.
+	if area.get_parent().name == "player":
+		enemy_target = area.get_parent()
 
 
 func _on_VisionArea_area_exited(area):
-	if area.name == "PlayerArea":
+	if enemy_target == area.get_parent():
 		enemy_target = null
-	pass # Replace with function body.
