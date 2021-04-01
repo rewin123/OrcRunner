@@ -35,6 +35,7 @@ var healing_speed = 100.0 / full_heal_time
 var water_decreasing = 100.0 / full_water_time
 
 var jumping = false
+var attacking = false
 
 var objects_in_range = []
 
@@ -61,7 +62,7 @@ func _physics_process(delta):
 				break
 				
 	
-	if jumping == false:
+	if jumping == false and attacking == false:
 		if Input.is_action_pressed("shift"):
 			walk = 1
 		else:
@@ -117,17 +118,18 @@ func _physics_process(delta):
 
 	
 	
-	if Input.is_action_pressed("space") and is_on_floor():
+	if Input.is_action_pressed("space") and is_on_floor() and attacking == false:
 		$AnimatedSprite.play("jump")
 		jumping = true
-	if vec.y > 10 and not is_on_floor():
+	if vec.y > 10 and not is_on_floor() and attacking == false:
 		$AnimatedSprite.play("fall")
 		
 		
-	if Input.is_action_just_pressed("attack") and sword == "shte":
+	if Input.is_action_just_pressed("attack") and jumping == false:
+		attacking = true
 		sword = "drw"
-		$AnimatedSprite.play("sword_drw")
-	if Input.is_action_just_pressed("shte") and sword == "drw":
+		$AnimatedSprite.play("attack1")
+	if Input.is_action_just_pressed("shte") and attacking == false:
 		sword = "shte"
 		$AnimatedSprite.play("sword_shte")
 	
@@ -160,6 +162,8 @@ func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "jump":
 		vec.y = jump
 		jumping = false
+	if $AnimatedSprite.animation == "attack1":
+		attacking = false
 	pass # Replace with function body.
 
 

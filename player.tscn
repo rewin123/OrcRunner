@@ -53,11 +53,6 @@ animations = [ {
 "name": "jump",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 27 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "run",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 31 ), ExtResource( 40 ), ExtResource( 36 ), ExtResource( 23 ) ],
 "loop": false,
 "name": "sword_shte",
@@ -91,6 +86,11 @@ animations = [ {
 "frames": [ ExtResource( 35 ), ExtResource( 29 ), ExtResource( 16 ), ExtResource( 10 ) ],
 "loop": false,
 "name": "sword_drw",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 27 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "run",
 "speed": 6.0
 } ]
 
