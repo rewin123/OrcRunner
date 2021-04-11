@@ -16,7 +16,7 @@ const RUN_SPEED = 200
 const jump = -200
 const stop = 10
 const acc = 50
-const maxhanger = 100
+const maxhunger = 100
 
 onready var ip = get_node("AnimatedSprite")
 
@@ -89,6 +89,8 @@ func _physics_process(delta):
 		sword = "shte"
 		$AnimatedSprite.play("sword_shte")
 	
+	if hunger > maxhunger:
+		hunger = maxhunger	
 	hunger -= delta*hunger_decreasing
 	$hunger.value = hunger
 		

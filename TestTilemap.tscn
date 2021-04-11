@@ -55,24 +55,29 @@ animations = [ {
 "name": "stay",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 35 ), ExtResource( 36 ) ],
-"loop": false,
-"name": "attack1",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 13 ) ],
 "loop": false,
 "name": "sword_drw",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 42 ) ],
+"loop": false,
+"name": "jump",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 35 ), ExtResource( 36 ) ],
+"loop": false,
+"name": "attack1",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "stay_sword",
+"name": "run",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
@@ -85,15 +90,10 @@ animations = [ {
 "name": "die",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": true,
-"name": "run",
+"name": "stay_sword",
 "speed": 6.0
-}, {
-"frames": [ ExtResource( 43 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 42 ) ],
-"loop": false,
-"name": "jump",
-"speed": 15.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
@@ -145,5 +145,8 @@ __meta__ = {
 
 [node name="Mushroom" parent="." instance=ExtResource( 39 )]
 position = Vector2( 91.9084, -5.28988 )
+
+[node name="Mushroom2" parent="." instance=ExtResource( 39 )]
+position = Vector2( -76.7295, -5.1573 )
 [connection signal="area_entered" from="player/Area2D" to="player" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="player/Area2D" to="player" method="_on_Area2D_area_exited"]

@@ -15,13 +15,13 @@ position = Vector2( -1.88988, 0.15749 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -2.008, 0 )
+position = Vector2( -1.44613, 0.187286 )
 scale = Vector2( 0.749, 1 )
 texture = ExtResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 visible = false
-position = Vector2( -1.66488, -30.5689 )
+position = Vector2( -1.10301, -25.5121 )
 scale = Vector2( 0.0457136, 0.0538745 )
 texture = ExtResource( 3 )
 [connection signal="area_entered" from="." to="." method="_on_Mushroom_area_entered"]
