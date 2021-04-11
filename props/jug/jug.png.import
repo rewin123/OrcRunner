@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jug.png-b6214fe3edfa8ff4bec40949983dbb78.stex"
+path="res://.import/jug.png-d67452ecd0165d23206670d289d18704.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://props/jug.png"
-dest_files=[ "res://.import/jug.png-b6214fe3edfa8ff4bec40949983dbb78.stex" ]
+source_file="res://props/jug/jug.png"
+dest_files=[ "res://.import/jug.png-d67452ecd0165d23206670d289d18704.stex" ]
 
 [params]
 

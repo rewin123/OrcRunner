@@ -23,4 +23,4 @@ func fill_room(tilemap, random_seed):
 		for x in range(x0, x1):
 			var fill = rnd.get_noise_2d(x, y)
 			if fill >= 0:
-				tilemap.set_cell(x, y, 0)
+				tilemap.set_cell(x, y, 0, false, false, false, Vector2(5,0))
